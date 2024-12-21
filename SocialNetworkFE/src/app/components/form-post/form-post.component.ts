@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
 import { AuthService } from "src/app/services/Auth/auth.service";
 import { PostService } from "src/app/services/Post/post.service";
 
@@ -17,9 +16,6 @@ export class FormPostsComponent implements OnInit {
     description: "",
   };
 
-  isEmpty(): boolean {
-    return this.postItem.title.length < 1 ? true : false;
-  }
   constructor(
     private authService: AuthService,
     private postService: PostService // public dialogRef: MatDialogRef<HomePageComponent>
@@ -40,4 +36,9 @@ export class FormPostsComponent implements OnInit {
       error: (error) => console.log("error", error),
     });
   }
+
+  isEmpty(): boolean{
+    return  this.postItem.title.length < 1 ? true  : false;
+  }
+
 }

@@ -21,6 +21,7 @@ export class AppComponent {
       error: (error) => console.log('error', error),
     });
     this.authService.authSubject.subscribe((auth) => {
+      console.log('auth object value', auth);
       this.user = auth.user;
     });
   }
